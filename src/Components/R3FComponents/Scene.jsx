@@ -3,10 +3,14 @@ import React, { Suspense } from "react";
 
 // R3F
 import { Canvas } from "@react-three/fiber";
-// import { OrbitControls } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
+
+// Leva
+import { useControls } from "leva";
 
 // Components
-import Cube from "./Elems/Cube";
+// import Cube from "./Elems/Cube";
+import Particles from "./Elems/Particles";
 
 const Scene = () => {
   return (
@@ -22,8 +26,9 @@ const Scene = () => {
       }}
       shadows
     >
+      <OrbitControls />
       <Suspense fallback={null}>
-        <Cube />
+        <Particles />
         <ambientLight color="green" intensity={1} />
         <directionalLight castShadow color="#b9d5ff" intensity={1} />
       </Suspense>
