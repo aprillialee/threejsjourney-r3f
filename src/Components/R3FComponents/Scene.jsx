@@ -29,6 +29,7 @@ const Scene = () => {
       <OrbitControls />
       <Suspense fallback={null}>
         <Particles />
+        {/* <Cube /> */}
         <ambientLight color="green" intensity={1} />
         <directionalLight castShadow color="#b9d5ff" intensity={1} />
       </Suspense>

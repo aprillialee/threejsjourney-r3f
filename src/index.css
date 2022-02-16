@@ -1,7 +1,14 @@
 html,
 body,
 canvas {
-  margin: auto 0;
+  background: conic-gradient(
+    from 222.15deg at 46.23% 50.03%,
+    #fff9ef -33.79deg,
+    #f0f8ff 120deg,
+    #faf1ec 287.38deg,
+    #fff9ef 326.21deg,
+    #f0f8ff 480deg
+  );
   width: 100vw;
   height: 100vh;
 }
