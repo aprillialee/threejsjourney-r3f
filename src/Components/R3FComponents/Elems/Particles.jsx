@@ -44,12 +44,11 @@ const Particles = () => {
     config: { duration: 2000 },
   }));
 
-  // useFrame(() => {
-  //   const elapsedTime = clock.getElapsedTime();
+  useFrame(() => {
+    const elapsedTime = clock.getElapsedTime();
 
-  //   ref.current.position.x = Math.sin(elapsedTime) * 1.5;
-  //   ref.current.position.y = Math.sin(elapsedTime) * 1.5;
-  // });
+    ref.current.rotation.y = elapsedTime * 0.09;
+  });
 
   return (
     <points ref={ref} position={[0, 1, 0]}>
@@ -67,6 +66,7 @@ const Particles = () => {
           itemSize={3}
         />
       </bufferGeometry>
+      {/* <sphereGeometry args={[1, 32, 32]} /> */}
       <a.pointsMaterial
         size={innerSpring.size}
         color={"lightpink"}

@@ -10,28 +10,29 @@ import { useControls } from "leva";
 
 // Components
 // import Cube from "./Elems/Cube";
-import Particles from "./Elems/Particles";
+// import Particles from "./Elems/Particles";
+import Galaxy from "./Elems/Galaxy";
+
+import { Perf } from "r3f-perf";
 
 const Scene = () => {
   return (
     <Canvas
       id="canvas"
-      gl={{
-        antialias: true,
-        color: "white",
-      }}
       camera={{
         aspect: window.innerWidth / window.innerHeight,
-        position: [4, 2, 5],
+        position: [1, 1, 1],
       }}
       shadows
     >
+      <axesHelper />
       <OrbitControls />
       <Suspense fallback={null}>
-        <Particles />
+        {/* <Particles /> */}
         {/* <Cube /> */}
-        <ambientLight color="green" intensity={1} />
-        <directionalLight castShadow color="#b9d5ff" intensity={1} />
+        <Galaxy />
+        <ambientLight color="#fff" intensity={1} />
+        <directionalLight castShadow color="#fff" intensity={1} />
       </Suspense>
     </Canvas>
   );
